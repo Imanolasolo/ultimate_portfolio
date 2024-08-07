@@ -63,7 +63,7 @@ elif selected == "About":
 
         # Diccionario de PDFs
         pdfs = {
-            "Raptor_Eye": "AI_medicare_pres.pdf",
+            "Raptor_Eye": "Raptor_Eye_pres.pdf",
             "Botarmy_hub": "Botarmy_pres.pdf",
             "AI_Medicare": "AI_medicare_pres.pdf",
             
@@ -165,7 +165,7 @@ elif selected == "Chat with Imanol":
     # Agregar el botón que abre el enlace en una nueva pestaña
     st.markdown(
         """
-        <a href="https://ai-medicare-platform.streamlit.app/" target="_blank">
+        <a href="https://aiprofilevcard.streamlit.app/" target="_blank">
             <button style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 5px;">
                 Chat with AI
             </button>
