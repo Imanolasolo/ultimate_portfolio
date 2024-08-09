@@ -4,16 +4,24 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import urllib.parse
+import base64
 
 # Configuración de la página
 st.set_page_config(page_title="Imanol Asolo portfolio", page_icon="🌟", layout="wide")
+
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+img_base64 = get_base64_of_bin_file('logo_portfolio.jpg')
 
 st.markdown(
     f"""
     <style>
     .stApp {{
-        background: url({'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzvgDLROm4JxrqhSyr-lE6whR4d5szAFJtZw&s'}) no-repeat center center fixed;
-        background-size: contain;
+        background: url('data:image/jpeg;base64,{img_base64}') no-repeat center center fixed;
+        background-size: cover;
     }}
     </style>
     """,
@@ -167,7 +175,7 @@ elif selected == "Chat with Imanol":
         """
         <a href="https://aiprofilevcard.streamlit.app/" target="_blank">
             <button style="padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: #007BFF; color: white; border: none; border-radius: 5px;">
-                Chat with AI
+                Chat with my AI
             </button>
         </a>
         """,
